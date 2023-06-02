@@ -39,3 +39,8 @@ TEST_F(StringSmilarityCheckerFixture, GetLengthPoint_3)
 {
     EXPECT_EQ(45, cChecker.GetLengthPoint("asdf", "qwert"));
 }
+
+TEST_F(StringSmilarityCheckerFixture, GetLengthPoint_4)
+{
+    EXPECT_EQ(0, cChecker.GetLengthPoint("asdf", "qwertyqwerty"));
+}

@@ -45,6 +45,7 @@ public:
 
     int CalculateLengthPoint()
     {
+        if (nLongLength >= 2 * nShortLength) return 0;
         return (nShortLength - nDiffLength) * MAX_LENGTH_POINT / nShortLength;
     }
 
