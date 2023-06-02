@@ -16,7 +16,7 @@ public:
         if (IsNotAllCapital(sString1) || IsNotAllCapital(sString2))
             throw invalid_argument("대문자만 입력 가능합니다.");
 
-        return GetLengthPoint(sString1, sString2);
+        return GetLengthPoint(sString1, sString2) + GetAlphaPoint(sString1, sString2);
     }
 
     bool IsInputEmpty(string sString1, string sString2)
