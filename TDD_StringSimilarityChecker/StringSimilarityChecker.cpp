@@ -8,16 +8,32 @@ class StringSmilarityChecker
 public:
     int GetTotalPoint(string sString1, string sString2)
     {
-        if (false == CheckInputValidity(sString1, sString2))
+        if (IsInputEmpty(sString1, sString2))
             throw invalid_argument("값을 넣어야 합니다.");
+
+        if (IsNotAllCapital(sString1) || IsNotAllCapital(sString2))
+            throw invalid_argument("대문자만 입력 가능합니다.");
 
         return GetLengthPoint(sString1, sString2);
     }
 
-    bool CheckInputValidity(string sString1, string sString2)
+    bool IsInputEmpty(string sString1, string sString2)
     {
         if (0 == sString1.size() || 0 == sString2.size())
-            return false;
+            return true;
+
+        return false;
+    }
+
+    bool IsNotAllCapital(string sString)
+    {
+        for (char cEach : sString)
+        {
+            if (cEach < 'A' || cEach > 'Z')
+                return true;
+        }
+
+        return false;
     }
 
     int GetLengthPoint(string sString1, string sString2)
@@ -26,6 +42,7 @@ public:
 
         return CalculateLengthPoint();
     }
+
 
     void CompareLength(string sString1, string sString2)
     {
