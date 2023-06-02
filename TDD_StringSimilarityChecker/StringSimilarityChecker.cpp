@@ -43,6 +43,41 @@ public:
         return CalculateLengthPoint();
     }
 
+    int GetAlphaPoint(string sString1, string sString2)
+    {
+        bool anAlphbetMap1[26] = { 0 };
+        bool anAlphbetMap2[26] = { 0 };
+        int nSameCount = 0;
+        int nTotalCount = 0;
+
+        for (int i = 0; i < sString1.size(); i++)
+        {
+            anAlphbetMap1[sString1[i] - 'A'] = true;
+        }
+
+        for (int i = 0; i < sString2.size(); i++)
+        {
+            anAlphbetMap2[sString2[i] - 'A'] = true;
+        }
+
+        for (int i = 0; i < 26; i++)
+        {
+            if (anAlphbetMap1[i] && anAlphbetMap2[i])
+            {
+                nSameCount++;
+            }
+        }
+
+        for (int i = 0; i < 26; i++)
+        {
+            if (anAlphbetMap1[i] || anAlphbetMap2[i])
+            {
+                nTotalCount++;
+            }
+        }
+
+        return 40 * nSameCount / nTotalCount;
+    }
 
     void CompareLength(string sString1, string sString2)
     {

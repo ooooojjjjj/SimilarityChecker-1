@@ -59,3 +59,22 @@ TEST_F(StringSimilarityCheckerFixture, GetLengthPoint_4)
     EXPECT_EQ(0, cChecker.GetLengthPoint("ASDF", "QWERTYQWERTY"));
 }
 
+TEST_F(StringSimilarityCheckerFixture, GetAlphaPoint_1)
+{
+    EXPECT_EQ(40, cChecker.GetAlphaPoint("ABCD", "DCBA"));
+}
+
+TEST_F(StringSimilarityCheckerFixture, GetAlphaPoint_2)
+{
+    EXPECT_EQ(32, cChecker.GetAlphaPoint("ABCD", "ABCDE"));
+}
+
+TEST_F(StringSimilarityCheckerFixture, GetAlphaPoint_3)
+{
+    EXPECT_EQ(40, cChecker.GetAlphaPoint("AAABB", "BA"));
+}
+
+TEST_F(StringSimilarityCheckerFixture, GetAlphaPoint_4)
+{
+    EXPECT_EQ(0, cChecker.GetAlphaPoint("ABCD", "QWERTY"));
+}
