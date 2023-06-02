@@ -24,3 +24,18 @@ TEST_F(StringSmilarityCheckerFixture, GetTotalPoint_NoStrings)
 {
     EXPECT_THROW(cChecker.GetTotalPoint("", ""), invalid_argument);
 }
+
+TEST_F(StringSmilarityCheckerFixture, GetLengthPoint_1)
+{
+    EXPECT_EQ(60, cChecker.GetLengthPoint("asdf", "qwer"));
+}
+
+TEST_F(StringSmilarityCheckerFixture, GetLengthPoint_2)
+{
+    EXPECT_EQ(45, cChecker.GetLengthPoint("asdfe", "qwer"));
+}
+
+TEST_F(StringSmilarityCheckerFixture, GetLengthPoint_3)
+{
+    EXPECT_EQ(45, cChecker.GetLengthPoint("asdf", "qwert"));
+}

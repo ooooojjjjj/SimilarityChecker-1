@@ -19,4 +19,28 @@ public:
         if (0 == sString1.size() || 0 == sString2.size())
             return false;
     }
+
+    int GetLengthPoint(string sString1, string sString2)
+    {
+        int nLengthPoint = 0;
+
+        int nLongLength = 0, nShortLength = 0;
+
+        if (sString1.size() > sString2.size())
+        {
+            nLongLength = sString1.size();
+            nShortLength = sString2.size();
+        }
+        else
+        {
+            nLongLength = sString2.size();
+            nShortLength = sString1.size();
+        }
+
+        int nDiffLength = nLongLength - nShortLength;
+
+        nLengthPoint = (nShortLength - nDiffLength) * 60 / nShortLength;
+
+        return nLengthPoint;
+    }
 };
