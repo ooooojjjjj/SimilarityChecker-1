@@ -13,7 +13,7 @@ public:
         if (IsInputEmpty(sString1, sString2))
             throw invalid_argument("값을 넣어야 합니다.");
 
-        if (IsNotAllCapital(sString1) || IsNotAllCapital(sString2))
+        if (IsNotAllCapital(sString1 + sString2))
             throw invalid_argument("대문자만 입력 가능합니다.");
 
         return GetLengthPoint(sString1, sString2) + GetAlphaPoint(sString1, sString2);
