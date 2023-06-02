@@ -27,20 +27,20 @@ TEST_F(StringSmilarityCheckerFixture, GetTotalPoint_NoStrings)
 
 TEST_F(StringSmilarityCheckerFixture, GetLengthPoint_1)
 {
-    EXPECT_EQ(60, cChecker.GetLengthPoint("asdf", "qwer"));
+    EXPECT_EQ(60, cChecker.GetTotalPoint("asdf", "qwer"));
 }
 
 TEST_F(StringSmilarityCheckerFixture, GetLengthPoint_2)
 {
-    EXPECT_EQ(45, cChecker.GetLengthPoint("asdfe", "qwer"));
+    EXPECT_EQ(45, cChecker.GetTotalPoint("asdfe", "qwer"));
 }
 
 TEST_F(StringSmilarityCheckerFixture, GetLengthPoint_3)
 {
-    EXPECT_EQ(45, cChecker.GetLengthPoint("asdf", "qwert"));
+    EXPECT_EQ(45, cChecker.GetTotalPoint("asdf", "qwert"));
 }
 
 TEST_F(StringSmilarityCheckerFixture, GetLengthPoint_4)
 {
-    EXPECT_EQ(0, cChecker.GetLengthPoint("asdf", "qwertyqwerty"));
+    EXPECT_EQ(0, cChecker.GetTotalPoint("asdf", "qwertyqwerty"));
 }
